@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #00FF00; /* 녹색 배경 */
+  background-color: #FFFFFF; /* 하얀색 배경 */
 }
 
 .login-container {
@@ -15,6 +15,7 @@ body {
 
 h2 {
   margin-bottom: 20px;
+  color: #4CAF50; /* Carbon Meter 텍스트 색상을 버튼과 동일한 녹색으로 변경 */
 }
 
 form {
@@ -23,26 +24,56 @@ form {
   width: 300px;
 }
 
+.input-box { /* 입력 필드를 감싸는 박스 */
+  background-color: #4CAF50; /* 버튼과 동일한 색상 */
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%; /* 박스가 입력 필드에 맞게끔 설정 */
+  box-sizing: border-box;
+}
+
+.input-field { /* 각 입력 필드를 감싸는 스타일 */
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
 label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 input {
   padding: 10px;
-  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 100%; /* 입력 필드가 박스 안에 맞게 설정 */
+  box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
+}
+
+.button-container { /* 버튼들을 감싸는 컨테이너 */
+  display: flex;
+  justify-content: space-between; /* 버튼 사이에 간격을 줌 */
 }
 
 button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* 기본 버튼 색상 */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 100px; /* 버튼 크기 고정 */
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* Hover 효과 */
+}
+
+.register-button {
+  background-color: #388E3C; /* 더 진한 녹색으로 Register 버튼 색상 변경 */
+}
+
+.register-button:hover {
+  background-color: #2E7D32; /* Hover 효과 적용 */
 }

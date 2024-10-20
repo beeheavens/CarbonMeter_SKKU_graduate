@@ -1,41 +1,24 @@
-import React, { useState } from 'react';
-import './App.css'; // 스타일을 추가하기 위해 CSS 파일을 임포트
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './Header'; // Header 컴포넌트 불러오기
+import LoginPage from './LoginPage'; // 추가할 페이지들 임시로 생성
+import MainPage from './MainPage';
+import RecordsPage from './RecordsPage';
+import RegisterPage from './RegisterPage';
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
-
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input 
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            required 
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/records" element={<RecordsPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
