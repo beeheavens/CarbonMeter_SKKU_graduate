@@ -7,10 +7,13 @@ const Header = () => {
       <nav style={styles.nav}>
         <ul style={styles.navList}>
           <li style={styles.navItem}>
+            <Link to="/" style={styles.navLink}>Main Page</Link>
+          </li>
+          <li style={styles.navItem}>
             <Link to="/login" style={styles.navLink}>Login</Link>
           </li>
           <li style={styles.navItem}>
-            <Link to="/" style={styles.navLink}>Main Page</Link>
+            <Link to="/evaluate" style={styles.navLink}>Evaluate</Link>
           </li>
           <li style={styles.navItem}>
             <Link to="/records" style={styles.navLink}>Records</Link>

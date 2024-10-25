@@ -5,13 +5,31 @@ const RegisterPage = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
-    console.log('Email:', email, 'Password:', password);
+
+    try {
+      const response = await fetch('http://localhost:12345/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+      if (response.status === 201) {
+        alert('Registration successful!');
+      } else {
+        alert(data.message || 'Registration failed!');
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+    }
   };
 
   return (

@@ -5,8 +5,12 @@ import LoginPage from './LoginPage'; // 추가할 페이지들 임시로 생성
 import MainPage from './MainPage';
 import RecordsPage from './RecordsPage';
 import RegisterPage from './RegisterPage';
+import Detailed from './Detailed';
+import EvaluatePage from './EvaluatePage';
+import ComparePage from './ComparePage';
 
 function App() {
+  
   return (
     <Router>
       <div>
@@ -16,6 +20,9 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/records" element={<RecordsPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/detailed/:codeTitle" element={<Detailed />} />
+          <Route path="/evaluate" element={<EvaluatePage />} />
+          <Route path="/compare/:codeTitle" element={<ComparePage />} />
         </Routes>
       </div>
     </Router>
